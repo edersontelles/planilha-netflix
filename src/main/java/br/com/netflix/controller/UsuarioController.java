@@ -3,6 +3,7 @@ package br.com.netflix.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -27,11 +28,12 @@ public class UsuarioController {
 	
 	@GetMapping
 	public List<Usuario> listar(){
+		
 		return usuarioRepository.findAll();
 	//return usuarioRepository.findByNome("Ederson");
 	//return usuarioRepository.findByNomeContaining("e");
 	}
-	
+
 	@GetMapping("/{userId}")
 	public ResponseEntity<Usuario> buscar(@PathVariable Long userId) {
 		java.util.Optional<Usuario> user = usuarioRepository.findById(userId);

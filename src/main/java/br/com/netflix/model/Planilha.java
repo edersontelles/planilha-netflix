@@ -11,11 +11,12 @@ import javax.persistence.OneToOne;
 @Entity
 public class Planilha {
 	
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	//private double total;
 	private String pix;
+	private boolean situacao;
 	
 	@OneToOne
 	private Periodo periodo;
@@ -46,6 +47,13 @@ public class Planilha {
 	public void setUsuario(Usuario usuario) {
 		this.usuario = usuario;
 	}
+	public boolean isSituacao() {
+		return situacao;
+	}
+	public void setSituacao(boolean situacao) {
+		this.situacao = situacao;
+	}
+	
 	@Override
 	public int hashCode() {
 		return Objects.hash(id);
@@ -62,5 +70,9 @@ public class Planilha {
 		return Objects.equals(id, other.id);
 	}
 	
-	
+	@Override
+	public String toString() {
+		return "Planilha [id=" + id + ", pix=" + pix + ", situacao=" + situacao + ", periodo=" + periodo + ", usuario="
+				+ usuario + "]";
+	}
 }

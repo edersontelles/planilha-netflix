@@ -16,7 +16,6 @@ public class Usuario {
 	
 	private String nome;
 	private String telefone;
-	private boolean situacao;
 	private double totalPago;	
 
 	public Long getId() {
@@ -37,18 +36,14 @@ public class Usuario {
 	public void setTelefone(String telefone) {
 		this.telefone = telefone;
 	}
-	public boolean isSituacao() {
-		return situacao;
-	}
-	public void setSituacao(boolean situacao) {
-		this.situacao = situacao;
-	}
 	public double getTotalPago() {
 		return totalPago;
 	}
 	public void setTotalPago(double totalPago) {
 		this.totalPago = totalPago;
 	}
+	
+	
 	@Override
 	public int hashCode() {
 		return Objects.hash(id);
